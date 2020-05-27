@@ -1,0 +1,7 @@
+keytool -genkeypair -keystore gylr.jks -keyalg RSA -keysize 2048 -alias androiddebugkey -dname "EMAILADDRESS=qiang.wang@wizarpos.com, CN=Wang Qiang, OU=wizarPOS, O=test group, L=Shanghai, ST=Shanghai, C=CN"
+
+keytool -certreq -keystore gylr.jks -alias androiddebugkey > gylr.csr
+
+keytool -importcert -keystore gylr.jks -file Wang_Qiang-testteam.crt -alias androiddebugkey
+
+jarsigner -verify -verbose -certs abc.apk

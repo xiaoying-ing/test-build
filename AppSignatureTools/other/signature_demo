@@ -1,0 +1,10 @@
+签名or重复签名：
+1.用pk8：java -jar /home/stone/Downloads/SignatureTools.jar sign --keytype pk8  --apk /home/stone/Downloads/testSignature/baiduditu_725.apk  --out /home/stone/Downloads/testSignature/baiduditu_725_signed.apk --keyfile /home/stone/Downloads/testSignature/private_pwd.pk8(有密or无密) --certs /home/stone/Downloads/testSignature/cert.x509_pwd.pem --keypass android(可选项) --storepass android(可选项) --sigAlg SHA1withRSA(SHA1withRSA/MD5withRSA/SHA256withRSA，可选项)
+
+2.用jks：java -jar /home/stone/Downloads/SignatureTools.jar sign --keytype jks  --apk /home/stone/Downloads/testSignature/baiduditu_725.apk  --out /home/stone/Downloads/testSignature/baiduditu_725_signed.apk --keystore /home/stone/Downloads/dailybuild/stoneLauncher.jks --alias  androiddebugkey --storepass wizarpos(可选项) --sigAlg SHA1withRSA(SHA1withRSA/MD5withRSA/SHA256withRSA，可选项)
+
+
+签发证书：
+1.用pk8：java -jar /home/stone/Downloads/SignatureTools.jar issueappcert --catype pk8 --apkcertfile /media/stone/disk/test-resource/meituanWaimaiShangjia3.3.1.198.apk_FILES/META-INF/CERT.RSA --cacert /home/stone/Downloads/testSignature/testSignatureOwner.crt --cakey /home/stone/Downloads/testSignature/testSignatureOnwerPrivate.pk8(有密or无密) --out /home/stone/Downloads/testSignature/newcert_pk8.pem --keypass android(可选项) --storepass android(可选项)
+
+2.用jks：java -jar /home/stone/Downloads/SignatureTools.jar issueappcert --catype jks --apkcertfile /media/stone/disk/test-resource/meituanWaimaiShangjia3.3.1.198.apk_FILES/META-INF/CERT.RSA --keystore /home/stone/Downloads/testSignature/testOwner.jks --alias testsignatureowner --out /home/stone/Downloads/testSignature/newcert_jks.pem --storepass wizarpos(可选项)
